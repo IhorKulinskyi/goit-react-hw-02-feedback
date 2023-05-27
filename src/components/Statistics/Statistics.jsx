@@ -11,14 +11,12 @@ const Statistics = ({ options, total, positivePercentage }) => {
   return (
     <StatsList>
       {options.map(option => {
-        let icon;
-        if (option[0] === 'good') {
-          icon = <BsEmojiSmile />;
+        let icon = <BsEmojiSmile />;
+        if (option[0] === 'bad') {
+          icon = <BsEmojiAngry />;
         }
         if (option[0] === 'neutral') {
           icon = <BsEmojiNeutral />;
-        } else {
-          icon = <BsEmojiAngry />;
         }
         return (
           <StatsListItem key={option[0]}>
