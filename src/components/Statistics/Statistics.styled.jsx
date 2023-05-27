@@ -22,8 +22,8 @@ export const StatsListItem = styled.li`
 `;
 
 export const IconWrapper = styled.span`
-  border-radius: 25px;
-  width:60px;
+  border-radius: 50%;
+  width:30px;
   height: 30px;
   display: flex;
   align-items: center;

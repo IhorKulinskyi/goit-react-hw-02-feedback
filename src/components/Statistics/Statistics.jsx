@@ -5,16 +5,28 @@ import {
   IconWrapper,
   TotalStatsList,
 } from './Statistics.styled';
+import { BsEmojiSmile, BsEmojiNeutral, BsEmojiAngry } from 'react-icons/bs';
 
 const Statistics = ({ options, total, positivePercentage }) => {
   return (
     <StatsList>
-      {options.map(option => (
-        <StatsListItem key={option[0]}>
-          <IconWrapper name={option[0]}>{option[0]}</IconWrapper>
-          {option[1]}
-        </StatsListItem>
-      ))}
+      {options.map(option => {
+        let icon;
+        if (option[0] === 'good') {
+          icon = <BsEmojiSmile />;
+        }
+        if (option[0] === 'neutral') {
+          icon = <BsEmojiNeutral />;
+        } else {
+          icon = <BsEmojiAngry />;
+        }
+        return (
+          <StatsListItem key={option[0]}>
+            <IconWrapper name={option[0]}>{icon}</IconWrapper>
+            {option[1]}
+          </StatsListItem>
+        );
+      })}
       <StatsListItem>
         <TotalStatsList>
           <li>
